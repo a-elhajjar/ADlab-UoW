@@ -3,7 +3,7 @@
 SCRIPT_PATH=$(readlink -f $(dirname $0))
 
 PS3='AD Lab setup- Make sure you do all if needed: '
-options=("UpdateRepository" "Ubuntu" "Arch" "Quit")
+options=("UpdateRepository" "Ubuntu" "Arch" "test" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
