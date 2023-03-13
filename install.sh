@@ -23,9 +23,9 @@ do
 	sudo cp ~/Desktop/ADlab-uow/sources.list sources.list
 	sudo apt-get update
 	sudo apt-get install neofetch
-neoftech
+	neofetch
 	cp ~/Desktop/ADlab-uow/neofetch/config.conf /home/kali/.config/neofetch/config.conf
-h
+
         ;;
         "impacket")
        	echo -e "${BOLDGREEN}You have chosen to install impacket${ENDCOLOR}"
