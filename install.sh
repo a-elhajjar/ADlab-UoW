@@ -3,7 +3,7 @@
 SCRIPT_PATH=$(readlink -f $(dirname $0))
 
 PS3='AD Lab setup- Make sure you do all if needed: '
-options=("UpdateRepository" "Crackmapexec" "mitm6" "BloodHound" "Setup dictionaries"  "CertiPy" "Fix" "All" "Quit")
+options=("UpdateRepository" "impacket" "Crackmapexec" "kerbrute" "mitm6" "BloodHound" "Setup dictionaries"  "CertiPy" "Fix" "All" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -12,11 +12,24 @@ do
 	sudo sudo add-apt-repository 'deb http://kali.cs.nctu.edu.tw/kali kali-rolling main non-free contrib'
 	sudo apt-get update
         ;;
+        "impacket")
+        	echo "You have chosen to install impacket"
+        python3 -m pip install impacket
+        ;;
+     
         "Crackmapexec")
 	echo "You have chosen to install Crackmapexec"
 	sudo apt-get install crackmapexec
 	echo "To exit type: "
         ;;
+           "kerbrute")
+        	echo "You have chosen to install kerbrute"
+        		cd ~/Desktop/arsenal-uow
+wget https://github.com/ropnop/kerbrute/releases/download/v1.0.3/kerbrute_linux_amd64
+chmod +x kerbrute_linux_amd64
+        ;;
+        
+        
         "mitm6")
 	echo "you have chosen to install mimt6"
 	cd ~/Desktop
