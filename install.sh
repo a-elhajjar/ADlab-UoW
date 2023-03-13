@@ -14,7 +14,7 @@ do
         "UpdateRepository")
 	echo -e "${BOLDGREEN}You have chosen to update the repositoy${ENDCOLOR}"
 	cd ~/Desktop/ADlab-uow/
-	more sources.list
+	touch sources.list
 	echo "deb http://kali.cs.nctu.edu.tw/kali kali-rolling main non-free contrib" >>  sources.list
 	cd /etc/apt/
 	sudo cp sources.list sources.list.bkp
