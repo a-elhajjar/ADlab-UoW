@@ -3,7 +3,7 @@
 SCRIPT_PATH=$(readlink -f $(dirname $0))
 
 PS3='AD Lab setup- Make sure you do all if needed: '
-options=("UpdateRepository" "Crackmapexec" "mitm6" "BloodHound" "Setup dictionaries" "All" "Quit")
+options=("UpdateRepository" "Crackmapexec" "mitm6" "BloodHound" "Setup dictionaries"  "CertiPy" "Fix" "All" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -19,7 +19,7 @@ do
         ;;
         "mitm6")
 	echo "you have chosen to install mimt6"
-	cd ~/home/kali/Desktop
+	cd ~/Desktop
 	git clone https://github.com/dirkjanm/mitm6.git
 	cd mitm6
 	pip install -r requirements.txt
@@ -37,30 +37,28 @@ do
 	
 	 "Setup dictionaries")
 	echo "you have chosen to setup your dictionaries"
-	echo "We are setting up two dictinonaries at the moment"
-	echo "One for users and the other for passwords"
-	echo "You will need to create a password the first time you use it."
-	echo "Make sure you use the correct port on the browser"
-	sudo neo4j start
+	cd ~/Desktop/arsenal-uow
+	touch userlist.txt
+	touch passlist.txt
+	cd ~/Desktop
+	;;
+	 "CertiPy")
+	echo "You have chosen to install CertiPy."
+	cd ~/Desktop
+	sudo apt install python3-certipy
+	cd ~/Desktop
 	;;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	 "Fix")
+	echo "You have installed Bloodhound. Time to fix Arsenal after installing BloodHound"
+	cd ~/Desktop
+	cd arsenal-uow
+	sudo apt-get install python3-libtmux  python3-pyyaml-env-tag python3-pyperclip python3-docutils
+	cd ~/Desktop
+	;;
 
 "All")
-	echo "You have chosen to setup all enviroment"
+	echo "You have chosen to setup all enviroment- This will not install Bloodhound"
 	sudo sudo add-apt-repository 'deb http://kali.cs.nctu.edu.tw/kali kali-rolling main non-free contrib'
 	sudo apt-get update
         sudo apt-get install crackmapexec
@@ -68,16 +66,16 @@ do
         git clone https://github.com/dirkjanm/mitm6.git
         cd mitm6
         pip install -r requirements.txt
+	cd ~/Desktop/arsenal-uow
+	touch userlist.txt
+	touch passlist.txt
 	cd ~/Desktop
-	sudo apt-get install bloodhound --fix-missing 
-	sudo neo4j start
-;;
-
-
-        "Quit")
+	sudo apt install python3-certipy
+	;;        "Quit")
             break
             ;;
         *) echo "invalid option $REPLY";;
+        
     esac
 done
 
