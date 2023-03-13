@@ -6,7 +6,6 @@ BOLDRED="\e[1;${RED}m"
 ENDCOLOR="\e[0m"
 SCRIPT_PATH=$(readlink -f $(dirname $0))
 neofetch
-
 echo -e "${BOLDRED}Only update repository if you are not using KALI 3C${ENDCOLOR}"
 
 PS3=' To exit type --12-- '
@@ -24,8 +23,9 @@ do
 	sudo cp ~/Desktop/ADlab-uow/sources.list sources.list
 	sudo apt-get update
 	sudo apt-get install neofetch
+neoftech
 	cp ~/Desktop/ADlab-uow/neofetch/config.conf /home/kali/.config/neofetch/config.conf
-
+h
         ;;
         "impacket")
        	echo -e "${BOLDGREEN}You have chosen to install impacket${ENDCOLOR}"
