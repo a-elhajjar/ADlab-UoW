@@ -6,6 +6,9 @@ BOLDRED="\e[1;${RED}m"
 ENDCOLOR="\e[0m"
 SCRIPT_PATH=$(readlink -f $(dirname $0))
 neofetch
+
+echo -e "${BOLDRED}Only update repository if you are not using KALI 3C${ENDCOLOR}"
+
 PS3=' To exit type --12-- '
 options=("UpdateRepository" "impacket" "Crackmapexec" "kerbrute" "PKINITtools" "mitm6" "BloodHound" "Setup dictionaries"  "CertiPy" "Fix" "All" "Quit")
 select opt in "${options[@]}"
