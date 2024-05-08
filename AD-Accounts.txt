@@ -1,13 +1,1 @@
-Firstname	password
-windowss	WindowsS
-Administrator	W3stm1nst3r@
-AD admin	Wmin@
-Win7U W1ndows7User!
-Win10U W1nd0ws10Us3r!
-linux LinuxS
-darth_vader
-ben_kenobi
-han_solo
-greedo
-guest
-jarjar_binks
+
